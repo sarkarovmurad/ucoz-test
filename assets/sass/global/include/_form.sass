@@ -1,0 +1,118 @@
+
+.add-book-form
+
+	&--move
+
+		+desktop-tablet()
+			position: fixed
+			top: 10px
+
+		+min-width(1000)
+			left: calc(50% - 485px)
+			width: 470px
+		+max-min-width(1000,991)
+			left: 15px
+			right: calc(50% + 15px)
+		+tablet()
+			left: 15px
+			right: calc(50% + 15px)
+
+
+	&__body
+
+		+desktop()
+			margin: 0 0 30px
+		+tablet-mobile()
+			margin: 0 0 15px
+
+	&__field
+		display: block
+
+		+desktop()
+			margin: 0 0 15px
+		+tablet-mobile()
+			margin: 0 0 10px
+
+		.help-block.error
+			display: block
+			margin: 3px 0 0
+			color: $color-error
+
+			+desktop()
+				font: 14px/100% $font
+			+tablet-mobile()
+				font: 12px/100% $font
+
+	&__desc
+
+		+desktop()
+			margin: 0 0 10px
+			font: 18px/100% $font
+		+tablet-mobile()
+			margin: 0 0 5px
+			font: 16px/100% $font
+
+		i
+			color: $color-error
+			font-style: normal
+
+	&__input
+		display: block
+		width: 100%
+		color: $color-font
+		background: none
+		border: 2px solid $color-font
+		transition: color 0.3s ease, border-color 0.3s ease
+
+		+desktop()
+			padding: 0 15px
+			height: 50px
+			font: 20px/46px $font
+			border-radius: 10px
+		+tablet-mobile()
+			padding: 0 10px
+			height: 40px
+			font: 18px/36px $font
+			border-radius: 6px
+
+		&.valid
+			border-color: $color-button
+		&.error
+			border-color: $color-error
+
+		&:hover
+			color: $color-font-light
+			border-color: $color-font-light
+		&:focus
+			color: $color-font-dark
+			border-color: $color-font-dark
+
+	&__button
+		display: block
+		color: $color-font-dark
+		background: $color-button
+		transition: background-color 0.3s ease, box-shadow 0.3s ease
+
+		&:hover, &:focus
+			background: $color-button-hover
+		&:focus
+			box-shadow: 0 0 8px 0 $color-button-hover
+		&:active
+			background: $color-button-active
+
+		+desktop()
+			width: 250px
+			height: 50px
+			font: 20px/46px $font
+			border-radius: 10px
+		+tablet-mobile()
+			padding: 0 10px
+			width: 100%
+			height: 40px
+			font: 18px/36px $font
+			border-radius: 6px
+
+	&__success-message
+		display: none
+
+

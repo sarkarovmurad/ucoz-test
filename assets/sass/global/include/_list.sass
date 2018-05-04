@@ -1,0 +1,152 @@
+.book-list
+
+
+	&__item
+		position: relative
+		color: $color-inversion
+		background: $color-font-dark
+		border: 1px solid $color-font-dark
+		transition: border-color 0.3s linear, box-shadow 0.3s linear
+
+		+desktop-tablet()
+			border-radius: 10px
+		+desktop()
+			padding: 10px 40px 10px 20px
+		+tablet()
+			padding: 10px 40px 10px 15px
+		+mobile()
+			padding: 5px 40px 5px 10px
+			border-radius: 6px
+
+		& + &
+
+			+desktop-tablet()
+				margin: 30px 0 0
+			+mobile()
+				margin: 20px 0 0
+
+		&.active
+
+			.book-list__action--edit
+				background-color: $color-button
+
+				&:before
+					opacity: 0
+				&:after
+					opacity: 1
+
+		&--shine
+			border-color: $color-button-hover
+			box-shadow: 0 0 25px 0 $color-button-hover
+
+	&__heading
+
+		+desktop-tablet()
+			margin: 0 0 10px
+		+desktop()
+			font: 600 20px/120% $font
+		+tablet()
+			font: 600 18px/120% $font
+		+mobile()
+			margin: 0 0 10px
+			font: 600 16px/120% $font
+
+	&__desc
+
+		+desktop-tablet()
+
+			& + &
+				margin: 7px 0 0
+
+		+desktop()
+			font: 18px/120% $font
+		+tablet()
+			font: 16px/120% $font
+		+mobile()
+			font: 14px/120% $font
+
+			& + &
+				margin: 4px 0 0
+
+	&__actions
+		position: absolute
+		top: 5px
+		right: 5px
+		width: 30px
+
+	&__action
+		position: relative
+		display: block
+		width: 30px
+		height: 30px
+		border-radius: 100%
+		border-radius: 50%
+		transition: background-color 0.3s linear
+
+		&--edit
+			border: 1px solid $color-button
+
+			&:hover, &:active
+				background-color: $color-button
+
+				&:before
+					opacity: 0
+				&:after
+					opacity: 1
+
+			&:before, &:after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				background-size: 60%
+				background-repeat: no-repeat
+				background-position: center center
+				transition: opacity 0.3s linear
+
+			&:before
+				background-image: url('/build/img/global-icon__edit.svg')
+			&:after
+				background-image: url('/build/img/global-icon__edit--hover.svg')
+				opacity: 0
+
+		&--delete
+			border: 1px solid $color-error
+
+			&:before, &:after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				margin: -1.5px 0 0 -9px
+				width: 18px
+				height: 3px
+				background: $color-error
+				border-radius: 2px
+				transition: background-color 0.3s linear
+			&:before
+				+rotate(45)
+			&:after
+				+rotate(-45)
+
+			&:hover, &:active
+				background-color: $color-error
+
+				&:before, &:after
+					background-color: $color-font-dark
+
+		& + &
+			margin: 5px 0 0
+
+	&__none
+		color: $color-error
+
+		+desktop()
+			font: 20px/120% $font
+		+tablet()
+			font: 18px/120% $font
+		+mobile()
+			font: 16px/120% $font
+

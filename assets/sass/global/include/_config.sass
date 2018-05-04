@@ -1,0 +1,105 @@
+// Конфигурация проекта
+// Описание всех переменных и миксинов проекта
+
+
+$font: 'Open Sans', arial, sans-serif
+
+
+
+// Цвета
+$color-bg              : #1c1c1c
+$color-font            : #e9e9e9
+$color-font-light      : #eee
+$color-font-dark       : #fff
+$color-inversion       : #333
+
+$color-error           : #ef4836
+
+$color-button          : #4ea354
+$color-button-hover    : #36ba3d
+$color-button-active   : #3c7b3f
+
+
+
+// Миксины
+@mixin clearfix
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+@mixin rotate($rotate)
+	transform: rotate($rotate+deg)
+
+@mixin beforeAfter()
+
+	&:before, &:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		transition: opacity 0.3s linear
+
+	&:after
+		opacity: 0
+
+	&:hover
+
+		&:before
+			opacity: 0
+		&:after
+			opacity: 1
+
+@mixin grad($color1,$color2)
+	background: $color2
+	background: linear-gradient(to top,$color2,$color1)
+
+@mixin max-width($width)
+	@media only screen and (max-width: $width+px)
+		@content
+
+@mixin max-height($height)
+	@media only screen and (max-height: $height+px)
+		@content
+
+@mixin min-width($width)
+	@media only screen and (min-width: $width+px)
+		@content
+
+@mixin max-min-width($width1, $width2)
+	@media only screen and (max-width: $width1+px) and (min-width: $width2+px)
+		@content
+
+@mixin keyframes($animationName)
+	@-webkit-keyframes #{$animationName}
+		@content
+	@-moz-keyframes #{$animationName}
+		@content
+	@-o-keyframes #{$animationName}
+		@content
+	@keyframes #{$animationName}
+		@content
+
+
+
+// Экраны
+// ======
+@mixin desktop()
+	@media only screen and (min-width: 992px)
+		@content
+
+@mixin tablet()
+	@media only screen and (max-width: 992px) and (min-width: 768px)
+		@content
+
+@mixin mobile()
+	@media only screen and (max-width: 767px)
+		@content
+
+@mixin desktop-tablet()
+	@media only screen and (min-width: 768px)
+		@content
+
+@mixin tablet-mobile()
+	@media only screen and (max-width: 992px)
+		@content

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+		<title>Список книг</title>
+		<meta name="keywords" content="список, книги, Ucoz, тестовое задание, тест">
+		<meta name="description" content="Тестовое задание для компании Ucoz - Список книг">
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=cyrillic" rel="stylesheet">
+		<link href="/build/css/global/project.css" type="text/css" rel="stylesheet">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/build/img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/build/img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/build/img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/build/img/favicon/site.webmanifest">
+		<link rel="mask-icon" href="/build/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+
+	</head>
+	<body>
+
+		<div class="wrapper">
+
+			<div class="container">
+
+				<h1>Тестовое задание по Front-end</h1>
+
+				<section class="book-module">
+					<div class="book-module__grid">
+						<div class="book-module__cell book-module__cell--form">
+
+							<h2>Добавить новую книгу</h2>
+
+							<div class="book-module__form-container">
+
+								<form class="add-book-form" action="#" method="post" id="add_book_form">
+
+									<div class="add-book-form__body">
+										<label class="add-book-form__field">
+											<div class="add-book-form__desc">Автор<i>*</i></div>
+											<input class="add-book-form__input" size="30" type="text" name="author" value="" data-validation="required" data-validation-error-msg-required="Пожалуйста, укажите автора книги" autocomplete="off" data-edit-text="Автор">
+										</label>
+										<label class="add-book-form__field">
+											<div class="add-book-form__desc">Год издания<i>*</i></div>
+											<input class="add-book-form__input add-book-form__input--number" size="30" type="text" name="year" value="" data-validation="required date" data-validation-format="yyyy" data-validation-error-msg-required="Введите год издания" data-validation-error-msg-date="Введите корректную дату" autocomplete="off">
+										</label>
+										<label class="add-book-form__field">
+											<div class="add-book-form__desc">Название книги<i>*</i></div>
+											<input class="add-book-form__input" size="30" type="text" name="name" value="" data-validation="required" data-validation-error-msg-required="Введите название книги" autocomplete="off">
+										</label>
+										<label class="add-book-form__field">
+											<div class="add-book-form__desc">Количество страниц<i>*</i></div>
+											<input class="add-book-form__input add-book-form__input--number" size="30" type="text" name="quantity" value="" data-validation="required number" data-validation-error-msg-required="Введите количество страниц"  data-validation-error-msg-number="Введите корректное число страниц" autocomplete="off" data-edit-text="Страниц">
+										</label>
+									</div>
+									<button class="add-book-form__button" type="submit">Добавить книгу</button>
+
+									<div class="add-book-form__success-message">Книга успешно добавлена</div>
+
+								</form><!-- .add-book-form -->
+
+							</div>
+
+						</div>
+						<div class="book-module__cell book-module__cell--list">
+
+							<h2>Список книг</h2>
+
+							<section class="book-list" data-none-text="Пока что нет ни одной книги" data-edit-text="Редактировать книгу" data-delete-text="Удалить книгу"></section>
+
+						</div>
+					</div>
+				</section><!-- .book-module -->
+
+			</div><!-- .container -->
+		</div><!-- .wrapper -->
+
+	</body>
+	<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="/node_modules/jquery-form-validator/form-validator/jquery.form-validator.js"></script>
+	<script src="/build/js/global/project.js"></script>
+</html>

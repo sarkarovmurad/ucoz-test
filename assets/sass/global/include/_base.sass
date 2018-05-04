@@ -1,0 +1,110 @@
+@charset "UTF-8"
+
+*
+	outline: none
+
+html
+	background-color: $color-bg
+
+body
+	width: 100%
+	color: $color-font
+
+	+desktop()
+		height: 100%
+		font: 16px/125% $font
+	+tablet-mobile()
+		height: auto
+	+tablet()
+		font: 15px/125% $font
+	+mobile()
+		font: 14px/125% $font
+
+button
+	display: block
+	padding: 0
+	background: none
+	border: none
+	cursor: pointer
+
+
+
+.wrapper
+	display: table
+	margin: 0 auto
+	width: 100%
+	height: 100%
+
+	+desktop-tablet()
+		padding: 30px 0
+	+mobile()
+		padding: 20px 0
+
+.container
+	margin-left: auto
+	margin-right: auto
+	padding-left: 15px
+	padding-right: 15px
+	max-width: 1000px
+
+
+h1
+	color: $color-font-dark
+	text-align: center
+
+	+desktop-tablet()
+		margin: 0 0 40px
+	+desktop()
+		font: 600 34px/100% $font
+	+tablet()
+		font: 600 30px/100% $font
+	+mobile()
+		margin: 0 0 20px
+		font: 600 26px/100% $font
+
+
+h2
+	color: $color-font-light
+
+	+desktop-tablet()
+		margin: 0 0 20px
+	+desktop()
+		font: 600 28px/100% $font
+	+tablet()
+		font: 600 24px/100% $font
+	+mobile()
+		margin: 0 0 15px
+		font: 600 20px/100% $font
+
+
+
+
+.book-module
+
+	&__grid
+		display: flex
+		flex-wrap: wrap
+
+		+desktop-tablet()
+			margin: 0 -15px
+
+	&__cell
+
+		+desktop-tablet()
+			padding: 0 15px
+			width: 50%
+		+mobile()
+			display: block
+			width: 100%
+
+		&--form
+
+			+mobile()
+				margin: 0 0 30px
+
+		&--list
+
+
+
+
+
